@@ -1,0 +1,57 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%--
+  Created by IntelliJ IDEA.
+  User: user
+  Date: 09.10.2023
+  Time: 18:16
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
+<head>
+    <title>Title</title>
+</head>
+<body>
+<table border="2px">
+    <th>Group ID:</th>
+    <th>DataOfFinish:</th>
+    <th> DataOfStart:</th>
+    <th>GroupName:</th>
+    <th>Delate:</th>
+    <th>Update:</th>
+    <c:forEach items="${p}" var="h">
+        <tr>
+            <td>
+            <a href="find/by/${h.id}">
+                    ${h.id} </a>
+        </td>
+            <td>${h. dateoffinish}</td>
+            <td>${h.dateofstart}</td>
+            <td>${h.groupname}</td>
+            <td>
+                <button>
+                    <a href="delete/${h.id}">
+                        DELETE
+                    </a>
+                </button>
+            </td>
+            <td>
+                <button>
+                    <a href="update/form/${h.id}">
+                        UPDATE
+                    </a>
+                </button>
+            </td>
+
+        </tr>
+    </c:forEach>
+</table>
+<button>
+    <a href="/group/controller/save/form">
+        Register Group
+    </a>
+</button>
+</table>
+
+</body>
+</html>
